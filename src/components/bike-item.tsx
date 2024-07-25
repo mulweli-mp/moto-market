@@ -36,7 +36,7 @@ const BikeItem: React.FC<Props> = ({ bike }) => {
     Description,
   } = bike;
 
-  const imageUrl = `https://firebasestorage.googleapis.com/v0/b/primebet-24.appspot.com/o/MotoMarket%2F${BikeID}.png?alt=media&token=8332898a-92fa-431f-9e16-75a20fefea3b`;
+  const imageUrl = `https://firebasestorage.googleapis.com/v0/b/primebet-24.appspot.com/o/MotoMarket%2F${BikeID}.png?alt=media`;
 
   return (
     <div className={styles.container}>
