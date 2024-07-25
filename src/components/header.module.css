@@ -20,6 +20,15 @@
   font-weight: bolder;
   font-size: large;
 }
+
+.searchInput {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  flex: 1;
+  height: 90%;
+}
+
 .searchBox {
   display: flex;
   flex-direction: row;
