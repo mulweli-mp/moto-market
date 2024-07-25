@@ -8,23 +8,13 @@ import {
   faCalendarAlt,
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
-
-type Bike = {
-  BikeID: number;
-  Make: string;
-  Model: string;
-  Year: number;
-  Displacement: number;
-  Price: number;
-  Terrain: string;
-  Description: string;
-};
+import { Bike } from "@/components/types";
 
 interface Props {
   bike: Bike;
 }
 
-const BikeItem: React.FC<Props> = ({ bike }) => {
+const BikeItem: React.FC<Props> = React.memo(({ bike }) => {
   const {
     BikeID,
     Make,
@@ -45,7 +35,7 @@ const BikeItem: React.FC<Props> = ({ bike }) => {
           src={imageUrl}
           width={150}
           height={150}
-          alt={`${Make} ${Model}`}
+          alt={`${Make} ${Model} image`}
         />
       </div>
       <div className={styles.descriptionContainer}>
@@ -78,6 +68,6 @@ const BikeItem: React.FC<Props> = ({ bike }) => {
       </div>
     </div>
   );
-};
+});
 
-export default React.memo(BikeItem);
+export default BikeItem;
