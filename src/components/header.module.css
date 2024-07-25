@@ -1,0 +1,98 @@
+.container {
+  /* position: fixed; */
+  width: 100%;
+}
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 15vh;
+  width: 100%;
+  background-color: #121212;
+  /* padding: 10px; */
+  /* flex: 1; */
+}
+.logoStyle {
+  margin-left: 10px;
+}
+.brandName {
+  color: #f50303;
+  font-weight: bolder;
+  font-size: large;
+}
+.searchBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 50%;
+  /* width: 100%; */
+  background-color: #ffffff;
+  /* padding: 10px; */
+  flex: 1;
+  margin: 0px 20px;
+  border-radius: 5px;
+  font-size: small;
+  font-weight: 400;
+  padding: 0px 15px;
+  color: #868686;
+}
+
+.cartContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+  width: 60px;
+  background-color: #f50303;
+  margin-right: 20px;
+  border-radius: 7px;
+  color: #ffffff;
+  font-size: medium;
+  font-weight: bold;
+}
+.sortButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+  width: 50%;
+  background-color: #3608dc;
+}
+
+.searchIcon {
+  width: 16px;
+  height: 16px;
+  color: #000;
+}
+.cartIcon {
+  width: 16px;
+  height: 16px;
+  color: #eaeaea;
+  margin-right: 5px;
+}
+
+.sortContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 0px 10px;
+  font-size: smaller;
+  background-color: rgb(223, 195, 195);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  height: 30px;
+  width: 110px;
+  position: absolute;
+  right: 10px;
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
