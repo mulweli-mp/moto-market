@@ -7,8 +7,9 @@ import TopTabs from "@/components/top-tabs";
 import TableSection from "@/components/table-section";
 import Footer from "@/components/footer";
 
-import { Bike, SortConfig } from "@/components/types";
+import { Bike, SortConfig, BuyNowDataType } from "@/components/types";
 import { fetchBikesData } from "@/utilities/fetchBikesData";
+import ViewCartModal from "@/components/view-cart-modal";
 
 export default function Home() {
   const [bikes, setBikes] = useState<Bike[]>([]);
@@ -18,6 +19,7 @@ export default function Home() {
     direction: "ascending",
   });
   const [websiteMode, setWebsiteMode] = useState<"shop" | "table">("shop");
+  const [buyNowData, setBuyNowData] = useState<null | BuyNowDataType>(null);
 
   useEffect(() => {
     const loadData = async () => {
@@ -68,18 +70,43 @@ export default function Home() {
     });
   }, [searchQuery, sortedBikes]);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  };
+  const onPressBuyNow = (data: BuyNowDataType | null) => {
+    setBuyNowData(data);
+    scrollToTop();
+  };
+
+  const onCancelBuyNow = () => {
+    setBuyNowData(null);
+  };
+
   return (
     <main className={styles.main}>
       <Header searchQuery={searchQuery} handleSearch={handleSearch} />
+      {buyNowData && (
+        <ViewCartModal
+          buyNowData={buyNowData}
+          onCancelBuyNow={onCancelBuyNow}
+        />
+      )}
       <TopTabs
         sortConfig={sortConfig}
         setSortConfig={setSortConfig}
         setSearchQuery={setSearchQuery}
         websiteMode={websiteMode}
         setWebsiteMode={setWebsiteMode}
+        onCancelBuyNow={onCancelBuyNow}
       />
       {websiteMode === "shop" ? (
-        <BikesSection filteredBikes={filteredBikes} />
+        <BikesSection
+          filteredBikes={filteredBikes}
+          onPressBuyNow={onPressBuyNow}
+        />
       ) : (
         <TableSection filteredBikes={filteredBikes} handleSort={handleSort} />
       )}
