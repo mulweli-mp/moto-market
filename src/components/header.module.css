@@ -6,11 +6,12 @@
   width: 100%;
   background-color: #131921;
   /* padding: 10px; */
-  /* flex: 1; */
 }
+
 .logoStyle {
-  margin-left: 10px;
+  margin-left: 20px;
 }
+
 .brandName {
   color: #f50303;
   font-weight: bolder;
@@ -23,6 +24,7 @@
   box-shadow: none;
   flex: 1;
   height: 90%;
+  /* background-color: #cc0303; */
 }
 
 .searchBox {
@@ -31,15 +33,17 @@
   align-items: center;
   justify-content: space-between;
   height: 50%;
-  /* width: 100%; */
   background-color: #ffffff;
-  /* padding: 10px; */
   flex: 1;
-  margin: 0px 20px;
   border-radius: 5px;
   font-size: small;
   font-weight: 400;
   padding: 0px 15px;
+  color: #868686;
+  margin: 0px 20px;
+}
+
+.searchBox input::placeholder {
   color: #868686;
 }
 
@@ -51,20 +55,17 @@
   height: 40%;
   width: 60px;
   background-color: #f50303;
-  margin-right: 20px;
   border-radius: 7px;
   color: #ffffff;
   font-size: medium;
   font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-right: 20px;
 }
-.sortButton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 60%;
-  width: 50%;
-  background-color: #3608dc;
+
+.cartContainer:hover {
+  background-color: #cc0303;
+  transform: scale(1.05);
 }
 
 .searchIcon {
@@ -72,6 +73,7 @@
   height: 16px;
   color: #000;
 }
+
 .cartIcon {
   width: 16px;
   height: 16px;
