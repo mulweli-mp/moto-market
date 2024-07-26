@@ -68,6 +68,7 @@
 .cartContainer:hover {
   background-color: #cc0303;
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .searchIcon {

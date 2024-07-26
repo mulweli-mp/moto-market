@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent } from "react";
+import React, { FC, ChangeEvent, useState } from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,7 +30,10 @@ const Header: FC<HeaderProps> = ({ searchQuery, handleSearch }) => {
           <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
         </div>
       </div>
-      <div className={styles.cartContainer}>
+      <div
+        onClick={() => alert("Coming soon, or is it?")}
+        className={styles.cartContainer}
+      >
         <FontAwesomeIcon icon={faShoppingCart} className={styles.cartIcon} />
         <p>0</p>
       </div>
