@@ -71,6 +71,7 @@
 
 .cartContainer:hover {
   background-color: #f50303;
+  cursor: pointer;
 }
 
 .specItem {
