@@ -1,5 +1,3 @@
-// types.ts
-
 export interface Bike {
   BikeID: number;
   Make: string;
@@ -9,4 +7,16 @@ export interface Bike {
   Price: number;
   Terrain: string;
   Description: string;
+}
+
+export interface SortConfig {
+  key: keyof Bike;
+  direction: "ascending" | "descending";
+}
+
+export interface SortOptionsArray {
+  id: string;
+  option: string;
+  key: keyof Bike;
+  direction: "ascending" | "descending";
 }
