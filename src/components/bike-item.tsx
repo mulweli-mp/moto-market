@@ -27,7 +27,7 @@ const BikeItem: React.FC<Props> = React.memo(({ bike, onPressBuyNow }) => {
     Description,
   } = bike;
 
-  const imageUrl = `https://firebasestorage.googleapis.com/v0/b/primebet-24.appspot.com/o/MotoMarket%2F${BikeID}.png?alt=media`;
+  const imageUrl = `/${BikeID}.png`;
 
   return (
     <div className={styles.container}>
