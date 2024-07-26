@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MotoMarket
 
-## Getting Started
+MotoMarket is a responsive web application for browsing, searching, and buying motorcycles. It features a shop mode with detailed bike views and a table mode for a sortable list of bikes. The project uses React, Next.js, and TypeScript.
 
-First, run the development server:
+# Features
+-Responsive design  
+-Search functionality  
+-Sortable bike list  
+-Detailed bike views  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  
+## Screenshots
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<img width="960" alt="mm1" src="https://github.com/user-attachments/assets/8408a3a8-9eda-42c3-9eac-259a33dbb5a6" style="margin-bottom: 60px;">
+<img width="960" alt="mm2" src="https://github.com/user-attachments/assets/4f55ddce-f588-4ae5-b3fc-8038e16b4bd5" style="margin-bottom: 60px;">
+<img width="960" alt="mm3" src="https://github.com/user-attachments/assets/64be48ef-f455-43c8-9c07-954bc6a9afa1" style="margin-bottom: 60px;">
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Try the app yourself
+The website is hosted here: [https://motomarket-mulweli.netlify.app](https://motomarket-mulweli.netlify.app)
 
-## Learn More
+## Building the project
 
-To learn more about Next.js, take a look at the following resources:
+To build the project on your local machine and run it on your device, follow these steps: 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository to your local machine:
+    ```bash
+   git clone https://github.com/mulweli-mp/moto-market.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+   cd moto-market
+    ```
+3. Install the required dependencies:
+    ```bash
+   npm install
+    ```
+4. Run development Server:
+    ```bash
+   npm run dev
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  
