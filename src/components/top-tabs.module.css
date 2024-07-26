@@ -58,6 +58,9 @@
 .filterModalContainer {
   right: 145px;
 }
+.tableModalContainer {
+  right: 285px;
+}
 
 .sortOption {
   height: 20px;

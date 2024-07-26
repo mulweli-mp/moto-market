@@ -16,9 +16,17 @@ interface Props {
   sortConfig: SortConfig;
   setSortConfig: ({ key, direction }: SortConfig) => void;
   setSearchQuery: (value: string) => void;
+  websiteMode: "shop" | "table";
+  setWebsiteMode: (value: "shop" | "table") => void;
 }
 
-const TopTabs: FC<Props> = ({ sortConfig, setSortConfig, setSearchQuery }) => {
+const TopTabs: FC<Props> = ({
+  sortConfig,
+  setSortConfig,
+  setSearchQuery,
+  websiteMode,
+  setWebsiteMode,
+}) => {
   const [showSortModal, setShowSortModal] = useState(false);
   const [showFilterModal, setShowFilterModal] = useState(false);
   const [showModeModal, setShowModeModal] = useState(false);
@@ -27,9 +35,11 @@ const TopTabs: FC<Props> = ({ sortConfig, setSortConfig, setSearchQuery }) => {
     <div className={styles.container}>
       <div
         className={styles.sortContainer}
-        onClick={() => setShowModeModal((prev) => !prev)}
+        onClick={() => {
+          setShowModeModal((prev) => !prev);
+        }}
       >
-        <p> Mode: Shop</p>
+        <p> Mode: {websiteMode}</p>
         <FontAwesomeIcon
           icon={showModeModal ? faAngleUp : faAngleDown}
           className={styles.arrowIcon}
@@ -52,6 +62,30 @@ const TopTabs: FC<Props> = ({ sortConfig, setSortConfig, setSearchQuery }) => {
           className={styles.arrowIcon}
         />
       </div>
+      {showModeModal && (
+        <div
+          className={`${styles.buttonContainer} ${styles.tableModalContainer} `}
+        >
+          <div
+            className={styles.sortOption}
+            onClick={() => {
+              setWebsiteMode("shop");
+              setShowModeModal(false);
+            }}
+          >
+            <p>Shop</p>
+          </div>
+          <div
+            className={styles.sortOption}
+            onClick={() => {
+              setWebsiteMode("table");
+              setShowModeModal(false);
+            }}
+          >
+            <p>Table</p>
+          </div>
+        </div>
+      )}
       {showSortModal && (
         <div
           className={`${styles.buttonContainer} ${styles.sortModalContainer} `}
