@@ -8,13 +8,14 @@ import {
   faCalendarAlt,
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
-import { Bike } from "@/components/types";
+import { Bike, BuyNowDataType } from "@/components/types";
 
 interface Props {
   bike: Bike;
+  onPressBuyNow: (data: BuyNowDataType) => void;
 }
 
-const BikeItem: React.FC<Props> = React.memo(({ bike }) => {
+const BikeItem: React.FC<Props> = React.memo(({ bike, onPressBuyNow }) => {
   const {
     BikeID,
     Make,
@@ -62,9 +63,17 @@ const BikeItem: React.FC<Props> = React.memo(({ bike }) => {
         </p>
         <p className={styles.priceText}>R{Price}</p>
       </div>
-      <div className={styles.cartContainer}>
+      <div
+        onClick={() =>
+          onPressBuyNow({
+            bikeName: `${Make} ${Model}`,
+            url: imageUrl,
+          })
+        }
+        className={styles.cartContainer}
+      >
         <FontAwesomeIcon icon={faShoppingCart} className={styles.cartIcon} />
-        <p className={styles.cartText}>Add To Cart</p>
+        <p className={styles.cartText}>Buy Now</p>
       </div>
     </div>
   );
