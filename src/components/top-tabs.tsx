@@ -18,6 +18,7 @@ interface Props {
   setSearchQuery: (value: string) => void;
   websiteMode: "shop" | "table";
   setWebsiteMode: (value: "shop" | "table") => void;
+  onCancelBuyNow: () => void;
 }
 
 const TopTabs: FC<Props> = ({
@@ -26,6 +27,7 @@ const TopTabs: FC<Props> = ({
   setSearchQuery,
   websiteMode,
   setWebsiteMode,
+  onCancelBuyNow,
 }) => {
   const [showSortModal, setShowSortModal] = useState(false);
   const [showFilterModal, setShowFilterModal] = useState(false);
@@ -39,6 +41,7 @@ const TopTabs: FC<Props> = ({
           setShowModeModal((prev) => !prev);
           setShowSortModal(false);
           setShowFilterModal(false);
+          onCancelBuyNow();
         }}
       >
         <p className={styles.buttonTextStyle}> Mode: {websiteMode}</p>
@@ -53,6 +56,7 @@ const TopTabs: FC<Props> = ({
           setShowFilterModal((prev) => !prev);
           setShowModeModal(false);
           setShowSortModal(false);
+          onCancelBuyNow();
         }}
       >
         <p className={styles.buttonTextStyle}>Filters</p>
@@ -65,6 +69,7 @@ const TopTabs: FC<Props> = ({
 
           setShowModeModal(false);
           setShowFilterModal(false);
+          onCancelBuyNow();
         }}
       >
         <p className={styles.buttonTextStyle}>
