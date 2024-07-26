@@ -2,14 +2,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 15vh;
+  height: 100px;
   width: 100%;
   background-color: #131921;
-  /* padding: 10px; */
-}
-
-.logoStyle {
-  margin-left: 20px;
 }
 
 .brandName {
@@ -18,29 +13,36 @@
   font-size: large;
 }
 
-.searchInput {
-  border: none;
-  outline: none;
-  box-shadow: none;
-  flex: 1;
-  height: 90%;
-  /* background-color: #cc0303; */
-}
-
 .searchBox {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 50%;
+  height: 45%;
   background-color: #ffffff;
   flex: 1;
   border-radius: 5px;
   font-size: small;
   font-weight: 400;
-  padding: 0px 15px;
   color: #868686;
-  margin: 0px 20px;
+  margin: 0px 10px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  height: 100%;
+  width: 80%;
+  margin-left: 15px;
+}
+.searchIconContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 7px;
 }
 
 .searchBox input::placeholder {

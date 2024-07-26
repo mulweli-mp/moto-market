@@ -15,13 +15,7 @@ const Header: FC<HeaderProps> = ({ searchQuery, handleSearch }) => {
 
   return (
     <div className={styles.headerContainer}>
-      <Image
-        src="/logo.png"
-        width={80}
-        height={80}
-        className={styles.logoStyle}
-        alt="motor-market logo"
-      />
+      <Image src="/logo.png" width={80} height={80} alt="motor-market logo" />
       {windowWidth >= 700 && <p className={styles.brandName}>MotoMarket</p>}
 
       <div className={styles.searchBox}>
@@ -32,7 +26,9 @@ const Header: FC<HeaderProps> = ({ searchQuery, handleSearch }) => {
           value={searchQuery}
           onChange={handleSearch}
         />
-        <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+        <div className={styles.searchIconContainer}>
+          <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+        </div>
       </div>
       <div className={styles.cartContainer}>
         <FontAwesomeIcon icon={faShoppingCart} className={styles.cartIcon} />
