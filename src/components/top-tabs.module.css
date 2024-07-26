@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 7vh;
+  width: 100%;
+  /* background-color: aquamarine; */
+}
+
+.sortContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 0px 10px;
+  font-size: 12px;
+  background-color: rgb(223, 195, 195);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  height: 30px;
+  width: 110px;
+}
+.sortContainer :hover {
+  /* background-color: rgb(241, 46, 46); */
+  cursor: pointer;
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); */
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
+.closeIcon {
+  width: 16px;
+  height: 16px;
+  color: red;
+}
+
+.buttonContainer {
+  min-height: 10px;
+  width: 130px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 22vh;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sortModalContainer {
+  right: 5px;
+}
+.filterModalContainer {
+  right: 145px;
+}
+
+.sortOption {
+  height: 20px;
+  width: 95%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.sortOption :hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
