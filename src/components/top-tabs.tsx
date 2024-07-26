@@ -34,32 +34,45 @@ const TopTabs: FC<Props> = ({
   return (
     <div className={styles.container}>
       <div
-        className={styles.sortContainer}
+        className={styles.tapButtonContainer}
         onClick={() => {
           setShowModeModal((prev) => !prev);
+          setShowSortModal(false);
+          setShowFilterModal(false);
         }}
       >
-        <p> Mode: {websiteMode}</p>
+        <p className={styles.buttonTextStyle}> Mode: {websiteMode}</p>
         <FontAwesomeIcon
           icon={showModeModal ? faAngleUp : faAngleDown}
-          className={styles.arrowIcon}
+          className={styles.buttonIcontyle}
         />
       </div>
       <div
-        className={styles.sortContainer}
-        onClick={() => setShowFilterModal((prev) => !prev)}
+        className={styles.tapButtonContainer}
+        onClick={() => {
+          setShowFilterModal((prev) => !prev);
+          setShowModeModal(false);
+          setShowSortModal(false);
+        }}
       >
-        <p>Filters</p>
-        <FontAwesomeIcon icon={faFilter} className={styles.arrowIcon} />
+        <p className={styles.buttonTextStyle}>Filters</p>
+        <FontAwesomeIcon icon={faFilter} className={styles.buttonIcontyle} />
       </div>
       <div
-        className={styles.sortContainer}
-        onClick={() => setShowSortModal((prev) => !prev)}
+        className={styles.tapButtonContainer}
+        onClick={() => {
+          setShowSortModal((prev) => !prev);
+
+          setShowModeModal(false);
+          setShowFilterModal(false);
+        }}
       >
-        <p>Sort by: {sortConfig.key === "BikeID" ? "None" : sortConfig.key}</p>
+        <p className={styles.buttonTextStyle}>
+          Sort by: {sortConfig.key === "BikeID" ? "None" : sortConfig.key}
+        </p>
         <FontAwesomeIcon
           icon={showSortModal ? faAngleUp : faAngleDown}
-          className={styles.arrowIcon}
+          className={styles.buttonIcontyle}
         />
       </div>
       {showModeModal && (
