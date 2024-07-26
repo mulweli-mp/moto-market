@@ -20,3 +20,7 @@ export interface SortOptionsArray {
   key: keyof Bike;
   direction: "ascending" | "descending";
 }
+export interface BuyNowDataType {
+  bikeName?: string;
+  url?: string;
+}
