@@ -5,6 +5,8 @@ import Header from "@/components/header";
 import BikesSection from "@/components/bikes-section";
 import TopTabs from "@/components/top-tabs";
 import TableSection from "@/components/table-section";
+import Footer from "@/components/footer";
+
 import { Bike, SortConfig } from "@/components/types";
 import { fetchBikesData } from "@/utilities/fetchBikesData";
 
@@ -81,6 +83,8 @@ export default function Home() {
       ) : (
         <TableSection filteredBikes={filteredBikes} handleSort={handleSort} />
       )}
+
+      <Footer />
     </main>
   );
 }
