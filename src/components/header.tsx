@@ -3,7 +3,6 @@ import styles from "./header.module.css";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import useWindowWidth from "@/hooks/useWindowsWidth";
 
 interface HeaderProps {
   searchQuery: string;
@@ -11,12 +10,9 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ searchQuery, handleSearch }) => {
-  const windowWidth = useWindowWidth();
-
   return (
     <div className={styles.headerContainer}>
       <Image src="/logo.png" width={80} height={80} alt="motor-market logo" />
-      {windowWidth >= 700 && <p className={styles.brandName}>MotoMarket</p>}
 
       <div className={styles.searchBox}>
         <input
