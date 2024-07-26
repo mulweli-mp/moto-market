@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import Header from "@/components/header";
 import BikesSection from "@/components/bikes-section";
 import TopTabs from "@/components/top-tabs";
+import TableSection from "@/components/table-section";
 import { Bike, SortConfig } from "@/components/types";
 import { fetchBikesData } from "@/utilities/fetchBikesData";
 
@@ -14,6 +15,7 @@ export default function Home() {
     key: "BikeID",
     direction: "ascending",
   });
+  const [websiteMode, setWebsiteMode] = useState<"shop" | "table">("shop");
 
   useEffect(() => {
     const loadData = async () => {
@@ -71,8 +73,14 @@ export default function Home() {
         sortConfig={sortConfig}
         setSortConfig={setSortConfig}
         setSearchQuery={setSearchQuery}
+        websiteMode={websiteMode}
+        setWebsiteMode={setWebsiteMode}
       />
-      <BikesSection filteredBikes={filteredBikes} />
+      {websiteMode === "shop" ? (
+        <BikesSection filteredBikes={filteredBikes} />
+      ) : (
+        <TableSection filteredBikes={filteredBikes} handleSort={handleSort} />
+      )}
     </main>
   );
 }
